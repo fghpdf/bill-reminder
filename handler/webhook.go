@@ -41,7 +41,7 @@ func WebhookHandler(c context.Context, ctx *app.RequestContext) {
 	date := convertDate(input.ScheduledDate)
 
 	record := model.Withdrawal{
-		ID:          input.ID,
+		ID:          input.ID + "_" + input.WithdrawItemsContent,
 		Date:        date,
 		Description: desc,
 		Amount:      amount,
